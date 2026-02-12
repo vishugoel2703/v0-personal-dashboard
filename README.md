@@ -1,48 +1,44 @@
-# 🧠 My Portfolio Dashboard
+# 🌐 Vishu Goel – Personal Portfolio
 
-> A customizable personal dashboard to display your project metrics, activity, and stats in one place.
-
-## ❓ About
-
-This repository contains the **Portfolio Dashboard** — a project that helps you visualize and interact with data from your GitHub repositories (or other APIs). It’s built to be flexible, easy to customize, and useful for tracking your development work over time.
+> A modern and responsive personal portfolio website showcasing my skills, projects, and professional journey.
 
 ---
 
-## ✨ Features
+## 👨‍💻 About Me
 
-- 📊 Display GitHub repository statistics
-- ⚡ Quick overview of commits, stars, issues, and contributions
-- 🧩 Modular widget system
-- 🎨 Easy hookup with new data sources
-- 📱 Responsive & clean UI
+Hi, I’m Vishu Goel 👋  
+I am a BBA graduate with strong interest in finance, entrepreneurship, and technology.  
 
-*(Add or edit this list based on what your dashboard actually does)*
+This portfolio website represents my work, achievements, projects, and career journey. It is designed to reflect my professional personality in a clean and modern way.
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Features
 
-This project uses the following technologies:
-
-- **Frontend:** *(e.g., React, Vue.js, HTML/CSS, etc.)*
-- **Styling:** *(e.g., Tailwind CSS, Bootstrap, custom CSS, etc.)*
-- **APIs:** *(e.g., GitHub API, REST/GraphQL)*
-- **Deployment:** *(e.g., Vercel, Netlify, GitHub Pages)*
-
-*(Replace with your actual technologies)*
+- 🏠 Home section with professional introduction
+- 👤 About section highlighting education & background
+- 💼 Projects showcase
+- 🛠 Skills & tools display
+- 📄 Resume download option
+- 📬 Contact form / social media links
+- 📱 Fully responsive design (mobile friendly)
 
 ---
 
-## 🔧 Installation
+## 🛠 Tech Stack
 
-To run this project locally:
-  Clone the repository  
-   ```bash
-   git clone https://github.com/vishugoel2703/v0-personal-dashboard.git
-(npm install # or yarn install)
+- Frontend: (Add what you used – HTML, CSS, React, Next.js, etc.)
+- Styling: (Tailwind CSS / Bootstrap / Custom CSS)
+- Deployment: (Vercel / Netlify / GitHub Pages)
 
-#To Run The project -> 
-  npm run dev
-  # or
-  yarn dev
+---
 
+## 📦 Installation
+
+To run locally:
+
+```bash
+git clone https://github.com/vishugoel2703/v0-personal-dashboard.git
+cd v0-personal-dashboard
+npm install
+npm run dev
