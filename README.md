@@ -1,10 +1,10 @@
-# 🧠 v0 Personal Dashboard
+# 🧠 My Portfolio Dashboard
 
 > A customizable personal dashboard to display your project metrics, activity, and stats in one place.
 
 ## ❓ About
 
-This repository contains the **v0 Personal Dashboard** — a project that helps you visualize and interact with data from your GitHub repositories (or other APIs). It’s built to be flexible, easy to customize, and useful for tracking your development work over time.
+This repository contains the **Portfolio Dashboard** — a project that helps you visualize and interact with data from your GitHub repositories (or other APIs). It’s built to be flexible, easy to customize, and useful for tracking your development work over time.
 
 ---
 
