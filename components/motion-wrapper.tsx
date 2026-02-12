@@ -282,15 +282,25 @@ function seededRandom(seed: number) {
 }
 
 const PARTICLES = Array.from({ length: 20 }).map((_, i) => ({
-  left: seededRandom(i * 3 + 1) * 100,
-  top: seededRandom(i * 3 + 2) * 100,
-  xDrift: seededRandom(i * 3 + 3) * 20 - 10,
-  duration: 4 + seededRandom(i * 7) * 4,
-  delay: seededRandom(i * 11) * 3,
+  left: Math.round(seededRandom(i * 3 + 1) * 10000) / 100,
+  top: Math.round(seededRandom(i * 3 + 2) * 10000) / 100,
+  xDrift: Math.round((seededRandom(i * 3 + 3) * 20 - 10) * 100) / 100,
+  duration: Math.round((4 + seededRandom(i * 7) * 4) * 100) / 100,
+  delay: Math.round(seededRandom(i * 11) * 3 * 100) / 100,
 }))
 
-// Floating particles background
+// Floating particles background — rendered only on the client to avoid hydration mismatches
 export function FloatingParticles() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <div className="absolute inset-0 overflow-hidden pointer-events-none" />
+  }
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {PARTICLES.map((p, i) => (
