@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
+import { About } from "@/components/about"
 import { Snapshot } from "@/components/snapshot"
 import { Education } from "@/components/education"
 import { Experience } from "@/components/experience"
@@ -12,9 +13,10 @@ import { Contact } from "@/components/contact"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-deep-black">
+    <main className="min-h-screen bg-deep-black grain-overlay">
       <Navbar />
       <Hero />
+      <About />
       <Snapshot />
       <Education />
       <Experience />
