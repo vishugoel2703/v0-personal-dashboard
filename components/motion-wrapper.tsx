@@ -275,28 +275,42 @@ export function Typewriter({ words, className = "" }: TypewriterProps) {
   )
 }
 
+// Deterministic pseudo-random for SSR-safe particle positions
+function seededRandom(seed: number) {
+  const x = Math.sin(seed * 9301 + 49297) * 49297
+  return x - Math.floor(x)
+}
+
+const PARTICLES = Array.from({ length: 20 }).map((_, i) => ({
+  left: seededRandom(i * 3 + 1) * 100,
+  top: seededRandom(i * 3 + 2) * 100,
+  xDrift: seededRandom(i * 3 + 3) * 20 - 10,
+  duration: 4 + seededRandom(i * 7) * 4,
+  delay: seededRandom(i * 11) * 3,
+}))
+
 // Floating particles background
 export function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 20 }).map((_, i) => (
+      {PARTICLES.map((p, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 rounded-full bg-gold/20"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${p.left}%`,
+            top: `${p.top}%`,
           }}
           animate={{
             y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
+            x: [0, p.xDrift, 0],
             opacity: [0.1, 0.4, 0.1],
             scale: [0.8, 1.2, 0.8],
           }}
           transition={{
-            duration: 4 + Math.random() * 4,
+            duration: p.duration,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: p.delay,
             ease: "easeInOut",
           }}
         />
