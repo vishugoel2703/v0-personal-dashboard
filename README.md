@@ -27,7 +27,7 @@ This portfolio website represents my work, achievements, projects, and career jo
 
 ## 🛠 Tech Stack
 
-- Frontend: (Add what you used – HTML, CSS, React, Next.js, etc.)
+- Frontend: (HTML, CSS, React, Next.js, etc.)
 - Styling: (Tailwind CSS / Bootstrap / Custom CSS)
 - Deployment: (Vercel / Netlify / GitHub Pages)
 
