@@ -129,8 +129,8 @@ export function Navbar() {
 
         {/* Desktop resume button */}
         <motion.a
-          href="/Vishu_Goel_Resume.pdf"
-          download
+          href="/resume.pdf"
+          download="Vishu_Goel_Resume.pdf"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="hidden md:flex items-center gap-2 px-4 py-2 text-xs font-semibold text-deep-black bg-gold/90 rounded-md hover:bg-gold transition-colors duration-300"
@@ -213,8 +213,8 @@ export function Navbar() {
                 className="mt-2"
               >
                 <a
-                  href="/Vishu_Goel_Resume.pdf"
-                  download
+                  href="/resume.pdf"
+                  download="Vishu_Goel_Resume.pdf"
                   className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-deep-black bg-gold/90 rounded-md"
                 >
                   <Download size={14} />

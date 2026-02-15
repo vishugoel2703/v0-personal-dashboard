@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { FadeIn, GoldDivider, Magnetic } from "./motion-wrapper"
-import { Mail, Phone, Linkedin, ExternalLink, MapPin, ArrowUpRight } from "lucide-react"
+import { Mail, Phone, Linkedin, ExternalLink, MapPin, ArrowUpRight, Download } from "lucide-react"
 
 const contactItems = [
   {
@@ -84,20 +84,33 @@ export function Contact() {
           </div>
         </FadeIn>
 
-        {/* LinkedIn CTA */}
+        {/* LinkedIn & Resume CTAs */}
         <FadeIn delay={0.3}>
-          <Magnetic>
-            <a
-              href="https://www.linkedin.com/in/vishu-goel-1910a3275"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="magnetic-btn inline-flex items-center gap-3 px-8 py-4 bg-gold/90 text-deep-black text-sm font-semibold rounded-xl hover:bg-gold transition-all duration-300"
-            >
-              <Linkedin size={18} />
-              Connect on LinkedIn
-              <ExternalLink size={14} />
-            </a>
-          </Magnetic>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Magnetic>
+              <a
+                href="/resume.pdf"
+                download="Vishu_Goel_Resume.pdf"
+                className="magnetic-btn inline-flex items-center gap-3 px-8 py-4 bg-gold/90 text-deep-black text-sm font-semibold rounded-xl hover:bg-gold transition-all duration-300"
+              >
+                <Download size={18} />
+                Download Resume
+                <ArrowUpRight size={14} />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="https://www.linkedin.com/in/vishu-goel-1910a3275"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="magnetic-btn inline-flex items-center gap-3 px-8 py-4 border border-gold/40 text-gold text-sm font-semibold rounded-xl hover:bg-gold/10 hover:border-gold/60 transition-all duration-300"
+              >
+                <Linkedin size={18} />
+                Connect on LinkedIn
+                <ExternalLink size={14} />
+              </a>
+            </Magnetic>
+          </div>
         </FadeIn>
 
         {/* Footer */}
