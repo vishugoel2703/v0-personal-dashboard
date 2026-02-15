@@ -89,8 +89,9 @@ export function Hero() {
         >
           <Magnetic>
             <a
-              href="/Vishu_Goel_Resume.pdf"
-              download
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="magnetic-btn flex items-center gap-2 px-7 py-3.5 bg-gold/90 text-deep-black text-sm font-semibold rounded-lg hover:bg-gold transition-all duration-300"
             >
               <Download size={16} />
