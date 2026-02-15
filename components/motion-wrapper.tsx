@@ -275,58 +275,9 @@ export function Typewriter({ words, className = "" }: TypewriterProps) {
   )
 }
 
-// Deterministic pseudo-random for SSR-safe particle positions
-function seededRandom(seed: number) {
-  const x = Math.sin(seed * 9301 + 49297) * 49297
-  return x - Math.floor(x)
-}
-
-const PARTICLES = Array.from({ length: 20 }).map((_, i) => ({
-  left: Math.round(seededRandom(i * 3 + 1) * 10000) / 100,
-  top: Math.round(seededRandom(i * 3 + 2) * 10000) / 100,
-  xDrift: Math.round((seededRandom(i * 3 + 3) * 20 - 10) * 100) / 100,
-  duration: Math.round((4 + seededRandom(i * 7) * 4) * 100) / 100,
-  delay: Math.round(seededRandom(i * 11) * 3 * 100) / 100,
-}))
-
-// Floating particles background — rendered only on the client to avoid hydration mismatches
+// Floating particles background using pure CSS to avoid hydration mismatches
 export function FloatingParticles() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <div className="absolute inset-0 overflow-hidden pointer-events-none" />
-  }
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {PARTICLES.map((p, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-gold/20"
-          style={{
-            left: `${p.left}%`,
-            top: `${p.top}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, p.xDrift, 0],
-            opacity: [0.1, 0.4, 0.1],
-            scale: [0.8, 1.2, 0.8],
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  )
+  return <div className="floating-particles-bg absolute inset-0 overflow-hidden pointer-events-none" />
 }
 
 // Reveal text animation word by word
